@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MusicPlayer</string>
+    <string name="TabForYou">For You</string>
+    <string name="TabTopTracks">Top Tracks</string>
+    <string name="MusicName">Starboy</string>
+    <string name="MusicArtist">The Weeknd</string>
+    <string name="defaultDuration">0:00</string>
+
+</resources>

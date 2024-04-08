@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playback_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityMusicPlayback"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h_guide1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h_guide2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_guide1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_guide2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/music_covers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/h_guide2"
+        app:layout_constraintTop_toTopOf="@+id/h_guide1"
+        />
+
+    <TextView
+        android:id="@+id/txt_musicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MusicName"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v_guide2"
+        app:layout_constraintStart_toStartOf="@+id/v_guide1"
+        app:layout_constraintTop_toTopOf="@+id/h_guide2"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <TextView
+        android:id="@+id/txt_musicArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MusicArtist"
+        android:textColor="@color/grey"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_musicName"
+        app:layout_constraintStart_toStartOf="@+id/txt_musicName"
+        app:layout_constraintTop_toBottomOf="@id/txt_musicName" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_time"
+        android:layout_width="0dp"
+        android:layout_height="01dp"
+        app:thumbRadius="0dp"
+        app:labelBehavior="gone"
+        app:minTouchTargetSize="20dp"
+        app:haloColor="@color/translucentWhite"
+        app:haloRadius="15dp"
+        app:trackHeight="3dp"
+        app:trackColorActive="@color/white"
+        app:tickVisible="false"
+        android:stepSize="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v_guide2"
+        app:layout_constraintStart_toStartOf="@+id/v_guide1"
+        app:layout_constraintTop_toBottomOf="@id/txt_musicArtist"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/txt_currentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/defaultDuration"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/v_guide1"
+        app:layout_constraintTop_toTopOf="@id/slider_time"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/txt_totalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/defaultDuration"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/v_guide2"
+        app:layout_constraintTop_toTopOf="@id/slider_time"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <ImageView
+        android:id="@+id/btn_play_pause"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/play_pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v_guide2"
+        app:layout_constraintStart_toStartOf="@+id/v_guide1"
+        app:layout_constraintTop_toBottomOf="@+id/slider_time"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageView
+        android:id="@+id/prev_track"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_prev_track"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_play_pause"
+        app:layout_constraintEnd_toStartOf="@+id/btn_play_pause"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/v_guide1"
+        app:layout_constraintTop_toTopOf="@+id/btn_play_pause" />
+
+    <ImageView
+        android:id="@+id/next_track"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_next_track"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_play_pause"
+        app:layout_constraintEnd_toStartOf="@id/v_guide2"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/btn_play_pause"
+        app:layout_constraintTop_toTopOf="@+id/btn_play_pause"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

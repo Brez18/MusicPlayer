@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ActivityHome">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h_guide1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/homeViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/homeTabLayout"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/homeTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/h_guide1"
+        android:background="@color/black"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabGravity="center"
+        app:tabRippleColor="@null"
+        app:tabTextColor="@color/grey"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Tab_ForYou"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/TabForYou"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Tab_TopTracks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/TabTopTracks"
+            />
+
+    </com.google.android.material.tabs.TabLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

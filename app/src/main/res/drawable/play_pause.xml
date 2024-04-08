@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when the button is pressed -->
+    <item android:state_selected="true">
+        <layer-list>
+            <item
+                android:width="25dp"
+                android:height="25dp">
+                <shape android:shape="oval">
+                    <solid android:color="#FFFFFF" />
+                </shape>
+            </item>
+            <item
+                android:width="10dp"
+                android:height="10dp"
+                android:top="7.5dp"
+                android:start="8.5dp"
+                android:drawable="@drawable/ic_play" />
+        </layer-list>
+    </item>
+    <!-- Default state when the button is not pressed -->
+    <item
+        android:state_selected="false">
+        <layer-list>
+            <item
+                android:width="25dp"
+                android:height="25dp">
+                <shape android:shape="oval">
+                    <solid android:color="#FFFFFF" />
+                </shape>
+            </item>
+            <item
+                android:width="12.5dp"
+                android:height="12.5dp"
+                android:top="6.3dp"
+                android:start="6.3dp"
+                android:drawable="@drawable/ic_pause"/>
+        </layer-list>
+    </item>
+</selector>

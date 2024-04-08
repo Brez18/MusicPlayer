@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparent">
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_musicCover"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image"/>
+
+            <TextView
+                android:id="@+id/txt_musicName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img_musicCover"
+                android:layout_marginStart="25dp"
+                android:text="@string/MusicName"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/txt_musicArtist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img_musicCover"
+                android:layout_below="@id/txt_musicName"
+                android:layout_alignStart="@id/txt_musicName"
+                android:text="@string/MusicArtist"
+                android:textColor="@color/grey"
+                android:textSize="12sp"/>
+
+            <ImageButton
+                android:id="@+id/btn_play_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_alignTop="@id/img_musicCover"
+                android:layout_alignBottom="@id/img_musicCover"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/play_pause"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
